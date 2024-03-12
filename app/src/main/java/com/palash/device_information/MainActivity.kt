@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val stringBuilder = StringBuilder()
 
         // Build information
-        stringBuilder.append("Device Model: ${Build.MODEL}\n")
+        //stringBuilder.append("Device Model: ${Build.MODEL}\n")
         Log.d("Device Model", Build.MODEL)//output-> RMX2193
 
         stringBuilder.append("Manufacturer: ${Build.MANUFACTURER}\n")
@@ -37,10 +37,10 @@ class MainActivity : AppCompatActivity() {
         Log.d("Android Version", Build.VERSION.RELEASE)//output-> 11
 
         stringBuilder.append("API Level: ${Build.VERSION.SDK_INT}\n")
-        Log.d("API Level", "${ Build.VERSION.SDK_INT }")//output-> 30
+        Log.d("API Level", Build.VERSION.SDK_INT.toString())//output-> 30
 
         // Check if the device is running on a specific API level
-        if (BuildCompat.isAtLeastQ()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             stringBuilder.append("Device is running on Android Q or later\n")
             Log.d("Device is running on Android Q or later", "\n")//output-> Device is running on Android Q or later
         }
